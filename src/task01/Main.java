@@ -1,25 +1,28 @@
 /*
-В папке с примерами, ex_004_comparable.
-Дописать логику, чтобы метод compareTo() осуществил
-поиск по: скорости (если же скорость у 2-х объектов равна, то ищем по цене) -> цене - > вес -> тип.
+Дописать логику, чтобы метод compareTo() осуществил поиск по
+скорости(если же скорость у 2-х объектов равна, то ищем по цене) -> цене - > моделе -> цвету машины.
 */
 package task01;
 
-import java.util.Arrays;
+//import java.util.*;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        Animal cat = new Animal("Oriental", 7, 25, 5000);
-        Animal dog = new Animal("Labrador", 30, 17, 4000);
-        Animal bird = new Animal("King Penguin", 15, 8, 50000);
-        Animal bird0 = new Animal("Penguin", 15, 8, 50000);
+        Car c1 = new Car(190, 8000, "BMW", "Red");
+        Car c2 = new Car(190, 2000, "Opel", "Black");
+        Car c3 = new Car(185, 10000, "Mercedes", "White");
+        List<Car> c = new ArrayList<>();
+        c.add(c1);
+        c.add(c2);
+        c.add(c3);
 
-        Animal[] listAnimal = {cat, dog, bird, bird0};
-
-        Arrays.sort(listAnimal);
-
-        for (Animal indicator : listAnimal) {
-            System.out.println(indicator);
+        Collections.sort(c);
+        for (Car temp : c) {
+            System.out.println(temp);
         }
     }
 }
